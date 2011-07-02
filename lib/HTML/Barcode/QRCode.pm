@@ -115,7 +115,7 @@ Mark A. Stratman, C<< <stratman@gmail.com> >>
 
 =head1 SOURCE REPOSITORY
 
-L<http://github.com/mstratman/HTML-Barcode>
+L<http://github.com/mstratman/HTML-Barcode-QRCode>
 
 =head1 LICENSE AND COPYRIGHT
 
