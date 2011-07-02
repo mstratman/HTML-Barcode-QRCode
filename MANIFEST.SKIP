@@ -1,4 +1,8 @@
+^HTML-Barcode-
 MYMETA\.yml
+^\.gitignore
+\.swp$
+pod2h*
 \bRCS\b
 \bCVS\b
 ^MANIFEST\.
