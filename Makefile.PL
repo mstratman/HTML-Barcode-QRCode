@@ -1,0 +1,16 @@
+use inc::Module::Install;
+name 'HTML-Barcode-QRCode';
+all_from 'lib/HTML/Barcode/QRCode.pm';
+
+requires 'HTML::Barcode' => '0.09';
+requires 'Any::Moose'    => '0.15';
+requires 'Text::QRCode'  => 0;
+
+tests 't/*.t';
+author_tests 'xt';
+
+test_requires 'Test::More';
+githubmeta;
+auto_include;
+auto_install;
+WriteAll;
