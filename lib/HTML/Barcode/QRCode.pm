@@ -32,7 +32,7 @@ them first.
 
 =head1 DESCRIPTION
 
-This class allows you easily create HTML representations of QR codes. These
+This class allows you to easily create HTML representations of QR codes. These
 are two-dimensional scan codes commonly used to allow people to quickly input
 a URL into their phone or other mobile device.
 
