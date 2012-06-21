@@ -1,55 +1,101 @@
-HTML-Barcode-QRCode
+NAME
+    HTML::Barcode::QRCode - Generate HTML representations of QR codes
 
-The README is used to introduce the module and provide instructions on
-how to install the module, any machine dependencies it may have (for
-example C compilers and installed libraries) and any other information
-that should be provided before the module is installed.
+SYNOPSIS
+    Text::QRCode and libqrencode are required by this class, so please
+    install them first.
 
-A README file is required for CPAN modules since CPAN extracts the README
-file from a module distribution so that people browsing the archive
-can use it to get an idea of the module's uses. It is usually a good idea
-to provide version information here so that people can decide whether
-fixes for the module are worth downloading.
+      my $code = HTML::Barcode::QRCode->new(text => 'http://search.cpan.org');
+      print $code->render;
 
+DESCRIPTION
+    This class allows you to easily create HTML representations of QR codes.
+    These are two-dimensional scan codes commonly used to allow people to
+    quickly input a URL into their phone or other mobile device.
 
-INSTALLATION
+    This requires Text::QRCode.
 
-To install this module, run the following commands:
+    You can read more about QR codes online (e.g.
+    http://en.wikipedia.org/wiki/QR_code).
 
-	perl Makefile.PL
-	make
-	make test
-	make install
+METHODS
+  new (%attributes)
 
-SUPPORT AND DOCUMENTATION
+    Instantiate a new HTML::Barcode::QRCode object. The `%attributes' hash
+    requires the text attribute, and can take any of the other attributes
+    listed below.
 
-After installing, you can find documentation for this module with the
-perldoc command.
+  render
 
-    perldoc HTML::Barcode::QRCode
+    This is a convenience routine which returns `<style>...</style>' tags
+    and the rendered QR code.
 
-You can also look for information at:
+    If you are printing multiple QR codes or want to ensure your `style'
+    tags are in your HTML headers, then you probably want to output the QR
+    code and style separately with the render_barcode and css entries
+    elsewhere in this document.
 
-    RT, CPAN's request tracker (report bugs here)
-        http://rt.cpan.org/NoAuth/Bugs.html?Dist=HTML-Barcode-QRCode
+  render_barcode
 
-    AnnoCPAN, Annotated CPAN documentation
-        http://annocpan.org/dist/HTML-Barcode-QRCode
+    Returns only the rendered QR code. You will need to provide stylesheets
+    separately, either writing them yourself or using the output of css.
 
-    CPAN Ratings
-        http://cpanratings.perl.org/d/HTML-Barcode-QRCode
+  css
 
-    Search CPAN
-        http://search.cpan.org/dist/HTML-Barcode-QRCode/
+    Returns CSS needed to properly display your rendered QR code. This is
+    only necessary if you are using render_barcode instead of the easier
+    render method.
 
+ATTRIBUTES
+    These attributes can be passed to new, or used as accessors.
+
+  text
+
+    Required - The information to put into the QR code.
+
+  foreground_color
+
+    A CSS color value (e.g. '#000' or 'black') for the foreground. Default
+    is '#000'.
+
+  background_color
+
+    A CSS color value background. Default is '#fff'.
+
+  module_size
+
+    A CSS value for the width and height of an individual module (a dot) in
+    the code. Default is '3px'.
+
+  css_class
+
+    The value for the `class' attribute applied to any container tags in the
+    HTML (e.g. `table' or `div'). `td' tags within the table will have
+    either css_class_on or css_class_off classes applied to them.
+
+    For example, if css_class is "barcode", you will get `<table
+    class="barcode">' and its cells will be either `<td class="barcode_on">'
+    or `<td class="barcode_off">'.
+
+  embed_style
+
+    Rather than rendering CSS stylesheets, embed the style information in
+    HTML `style' attributes. You should not use this option without good
+    reason, as it greatly increases the size of the generated markup, and
+    makes it impossible to override with stylesheets.
+
+AUTHOR
+    Mark A. Stratman, `<stratman@gmail.com>'
+
+SOURCE REPOSITORY
+    http://github.com/mstratman/HTML-Barcode-QRCode
 
 LICENSE AND COPYRIGHT
+    Copyright 2011 Mark A. Stratman.
 
-Copyright (C) 2011 Mark A. Stratman
+    This program is free software; you can redistribute it and/or modify it
+    under the terms of either: the GNU General Public License as published
+    by the Free Software Foundation; or the Artistic License.
 
-This program is free software; you can redistribute it and/or modify it
-under the terms of either: the GNU General Public License as published
-by the Free Software Foundation; or the Artistic License.
-
-See http://dev.perl.org/licenses/ for more information.
+    See http://dev.perl.org/licenses/ for more information.
 
