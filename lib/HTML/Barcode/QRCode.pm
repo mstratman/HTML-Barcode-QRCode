@@ -3,7 +3,7 @@ use Any::Moose;
 extends 'HTML::Barcode::2D';
 use Text::QRCode;
 
-our $VERSION = '0.09';
+our $VERSION = '0.10';
 
 has '+module_size' => ( default => '3px' );
 has '_qrcode' => (

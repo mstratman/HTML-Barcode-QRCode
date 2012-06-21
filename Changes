@@ -1,4 +1,9 @@
-Revision history for HTML-Barcode
+Revision history for HTML-Barcode-QRCode
+
+0.10    Thu Jun 21 09:40:49 CDT 2012
+        - Use Module::Install::Repository because metacpan doesn't
+          display the repository correctly as set by GithubMeta.
+        - Do not auto_include(), and do not include Test::More.
 
 0.09    Sat Jul  2 13:36:27 EDT 2011
         - Broke off into its own distribution from HTML::Barcode
