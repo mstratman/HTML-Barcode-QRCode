@@ -4,7 +4,7 @@ license 'perl';
 all_from 'lib/HTML/Barcode/QRCode.pm';
 
 requires 'HTML::Barcode' => '0.09';
-requires 'Any::Moose'    => '0.15';
+requires 'Moo';
 requires 'Text::QRCode'  => 0;
 
 tests 't/*.t';
