@@ -1,5 +1,8 @@
 Revision history for HTML-Barcode-QRCode
 
+0.11    Thu Mar 24 15:36:35 CDT 2016
+        - Switched from Any::Moose to Moo
+
 0.10    Thu Jun 21 09:40:49 CDT 2012
         - Use Module::Install::Repository because metacpan doesn't
           display the repository correctly as set by GithubMeta.
