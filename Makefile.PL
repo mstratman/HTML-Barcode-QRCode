@@ -3,7 +3,7 @@ name 'HTML-Barcode-QRCode';
 license 'perl';
 all_from 'lib/HTML/Barcode/QRCode.pm';
 
-requires 'HTML::Barcode' => '0.09';
+requires 'HTML::Barcode' => '0.13';
 requires 'Moo';
 requires 'Text::QRCode'  => 0;
 
