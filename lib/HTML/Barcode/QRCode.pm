@@ -3,7 +3,7 @@ use Moo;
 extends 'HTML::Barcode::2D';
 use Text::QRCode;
 
-our $VERSION = '0.11';
+our $VERSION = '0.12';
 
 has '+module_size' => ( default => '3px' );
 has '_qrcode' => (
